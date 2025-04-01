@@ -375,7 +375,7 @@ a:focus,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: white;
   border: none;
   cursor: pointer;
@@ -644,7 +644,7 @@ main {
   width: 3rem;
   height: 3rem;
   border-radius: var(--radius-circle);
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: white;
   border: none;
   display: flex;
