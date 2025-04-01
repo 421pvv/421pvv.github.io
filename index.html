@@ -3,26 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vishnu Vardhan Putta - Software Developer specializing in web development and exploring machine learning">
+    <meta name="keywords" content="software developer, web development, machine learning, portfolio">
     <title>Vishnu Vardhan Putta | Portfolio</title>
     <link rel="icon" type="image/x-icon" href="./media/favicon.ico">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS (Animate On Scroll) library for scroll animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="./styles/main.css">
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
-    <header id="header">
+    <!-- Preloader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Header with navigation -->
+    <header id="header" class="glass-effect">
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">&lt;Vishnu.<span>Dev/&gt;</span></a>
-                <nav>
-                    <div class="nav-links" id="navLinks">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#contact">Contact</a>
+                <!-- Enhanced logo with modern design -->
+                <a href="#" class="logo" aria-label="Home">
+                    <div class="logo-container">
+                        <span class="code-tag">&lt;</span><span class="logo-text">Vishnu.</span><span class="accent">Dev</span><span class="code-tag">/&gt;</span>
+                        <div class="logo-glow"></div>
                     </div>
+                </a>
+                <nav aria-label="Main navigation">
+                    <div class="nav-links" id="navLinks">
+                        <a href="#home" class="nav-item">Home</a>
+                        <a href="#about" class="nav-item">About</a>
+                        <a href="#skills" class="nav-item">Skills</a>
+                        <a href="#projects" class="nav-item">Projects</a>
+                        <a href="#contact" class="nav-item">Contact</a>
+                    </div>
+                    
+                    <!-- Hamburger menu for mobile -->
                     <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
                     </button>
                 </nav>
             </div>
@@ -30,10 +57,11 @@
     </header>
 
     <main>
+        <!-- Hero section -->
         <section class="hero" id="home">
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Hello! I'm <span>Vishnu Vardhan Putta</span></h1>
+                <div class="hero-content" data-aos="fade-up" data-aos-duration="400">
+                    <h1 class="hero-title">Hello! I'm <span class="gradient-text">Vishnu Vardhan Putta</span></h1>
                     <h2 class="hero-subtitle">Computer Science Graduate Student · Software Developer · Exploring Machine Learning</h2>
                     <p class="hero-description">I build web applications and design APIs. I've worked on full-stack apps and enjoy creating efficient, scalable solutions. Web dev is my strong suit, but I'm also diving into machine learning and its real-world applications. I focus on making things work smoothly and continuously improving through hands-on experience.</p>
                     <div class="cta-buttons">
@@ -42,82 +70,130 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Particles container -->
+            <div id="particles-container" class="particles-container"></div>
         </section>
 
-        <section id="about">
+        <!-- About section -->
+        <section id="about" class="section-padding">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="400">About Me</h2>
                 <div class="about">
-                    <div class="about-image">
-                        <img src="./media/VishnuDisplayPicture.webp" alt="Display Picture of Vishnu">
+                    <div class="about-image" data-aos="fade-right" data-aos-duration="400">
+                        <div class="image-wrapper">
+                            <img src="./media/VishnuDisplayPicture.webp" alt="Display Picture of Vishnu" loading="lazy">
+                            <!-- Decorative elements -->
+                            <div class="circle-decoration"></div>
+                            <div class="square-decoration"></div>
+                        </div>
                     </div>
-                    <div class="about-content">
-                        <p class="hero-description">I'm a Computer Science graduate student focusing on Software Development. I'm proficient in Web Development and API design, having built full-stack applications and developed APIs to enhance functionality. I'm also very strong in Data Structures and Algorithms, having TA'd for both the Web Programming and Algorithms graduate courses. I'm passionate about creating scalable, efficient solutions and do a lot of unit testing to ensure my code works as expected. Currently, I'm diving into machine learning, always looking for ways to expand my skills and apply new technologies to solve real-world problems. I have hands-on experience working in Agile software development environments, collaborating with teams using tools like Jira and Git.</p>
-                        <p class="hero-description">When I'm not coding, I enjoy solving Rubik's Cubes, photographing portraits, and watching thriller movies or series. I'm always eager to take on new challenges and push myself to grow.</p>
+                    <div class="about-content" data-aos="fade-left" data-aos-duration="400" data-aos-delay="100">
+                        <p class="about-description">I'm a Computer Science graduate student focusing on Software Development. I'm proficient in Web Development and API design, having built full-stack applications and developed APIs to enhance functionality. I'm also very strong in Data Structures and Algorithms, having TA'd for both the Web Programming and Algorithms graduate courses.</p>
+                        <p class="about-description">I'm passionate about creating scalable, efficient solutions and do a lot of unit testing to ensure my code works as expected. Currently, I'm diving into machine learning, always looking for ways to expand my skills and apply new technologies to solve real-world problems. I have hands-on experience working in Agile software development environments, collaborating with teams using tools like Jira and Git.</p>
+                        <p class="about-description">When I'm not coding, I enjoy solving Rubik's Cubes, photographing portraits, and watching thriller movies or series. I'm always eager to take on new challenges and push myself to grow.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
+        <!-- Skills section -->
+        <section id="skills" class="section-padding">
             <div class="container">
-                <h2 class="section-title">My Skills</h2>
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="400">My Skills</h2>
                 <div class="skills-container">
-
-                    <!-- Skill card 1 -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                    <!-- Skill card 1: Front-end Development -->
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="400" data-aos-delay="50">
+                        <div class="skill-icon-container">
+                            <i class="fas fa-laptop-code skill-icon" aria-hidden="true"></i>
                         </div>
                         <h3 class="skill-title">Front-end Development</h3>
-                        <ul class="skill-list">
-                            <li>HTML5, CSS3, JavaScript</li>
-                            <li>Handlebars</li>
-                            <li>Responsive Design</li>
-                            <li>UI/UX Principles</li>
-                        </ul>
+                        <div class="skill-content">
+                            <ul class="skill-list">
+                                <li><span class="skill-highlight">HTML5, CSS3, JavaScript</span></li>
+                                <li><span class="skill-highlight">Handlebars</span></li>
+                                <li><span class="skill-highlight">Responsive Design</span></li>
+                                <li><span class="skill-highlight">UI/UX Principles</span></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <!-- Skill card 2 -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-server" aria-hidden="true"></i>
+                    <!-- Skill card 2: Back-end Development -->
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="400" data-aos-delay="100">
+                        <div class="skill-icon-container">
+                            <i class="fas fa-server skill-icon" aria-hidden="true"></i>
                         </div>
                         <h3 class="skill-title">Back-end Development</h3>
-                        <ul class="skill-list">
-                            <li>Python, Java, Node.js</li>
-                            <li>Express, Flask, Django</li>
-                            <li>RESTful APIs</li>
-                            <li>Database Design</li>
-                        </ul>
+                        <div class="skill-content">
+                            <ul class="skill-list">
+                                <li><span class="skill-highlight">Python, Java, Node.js</span></li>
+                                <li><span class="skill-highlight">Express, Flask, Django</span></li>
+                                <li><span class="skill-highlight">RESTful APIs</span></li>
+                                <li><span class="skill-highlight">Database Design</span></li>
+                            </ul>
+                        </div>
                     </div>
 
-                     <!-- Skill card 3 -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-database" aria-hidden="true"></i>
+                    <!-- Skill card 3: Database & Tools -->
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="400" data-aos-delay="150">
+                        <div class="skill-icon-container">
+                            <i class="fas fa-database skill-icon" aria-hidden="true"></i>
                         </div>
                         <h3 class="skill-title">Database & Tools</h3>
-                        <ul class="skill-list">
-                            <li>MongoDB, PostgreSQL, MySQL</li>
-                            <li>Git, GitHub</li>
-                            <li>Jira</li>
-                        </ul>
+                        <div class="skill-content">
+                            <ul class="skill-list">
+                                <li><span class="skill-highlight">MongoDB, PostgreSQL, MySQL</span></li>
+                                <li><span class="skill-highlight">Git, GitHub</span></li>
+                                <li><span class="skill-highlight">Jira</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Background decoration for skills section -->
+            <div class="section-decoration">
+                <div class="grid-lines"></div>
+            </div>
         </section>
 
-        <section id="projects">
+        <!-- Projects section -->
+        <section id="projects" class="section-padding">
             <div class="container">
-                <h2 class="section-title">My Projects</h2>
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="400">My Projects</h2>
+                
+                <!-- Project Category Filter -->
+                <div class="project-filter" data-aos="fade-up" data-aos-duration="400">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="frontend">Front-end</button>
+                    <button class="filter-btn" data-filter="backend">Back-end</button>
+                    <button class="filter-btn" data-filter="fullstack">Full-stack</button>
+                    <!-- Blank categories for now
+                    <button class="filter-btn" data-filter="ml">AI/ML</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                    <button class="filter-btn" data-filter="desktop">Desktop Apps</button> -->
+                </div>
+                
                 <div class="projects-grid">
                     <!-- Project 1 -->
-                    <div class="project-card">
-                        <img src="./media/PhotographySpotFinder.webp" alt="Screenshot of PhotographySpotFinder Project" class="project-image">
+                    <div class="project-card" data-aos="zoom-in" data-aos-duration="400" data-categories="frontend backend fullstack">
+                        <div class="project-image-container">
+                            <img src="./media/PhotographySpotFinder.webp" alt="Screenshot of Photography Spot Finder Project" class="project-image" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/421pvv/photography-spot-finder" class="project-link" aria-label="View GitHub repository" target="_blank" rel="noopener">
+                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                                    </a>
+                                    <a href="https://youtu.be/SCBXOWmqA4g?feature=shared" class="project-link" aria-label="View live demo" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-content">
                             <h3 class="project-title">Photography Spot Finder</h3>
-                            <p class="project-description">A web app for photographers to discover, share, and rate the best photo spots in New York City. Users can browse locations, submit new spots with descriptions and images, leave ratings and comments, and save favorites to their profiles. A built-in map allows searching by location, and a monthly photo contest lets users submit and vote on the best shots. The platform also includes user verification for credibility and an admin panel to moderate reported content.</p>
+                            <div class="project-description-container">
+                                <p class="project-description">A web app for photographers to discover, share, and rate the best photo spots in New York City. Users can browse locations, submit new spots with descriptions and images, leave ratings and comments, and save favorites to their profiles.</p>
+                            </div>
                             <div class="project-tech">
                                 <span>Node.js</span>
                                 <span>Express</span>
@@ -126,53 +202,109 @@
                                 <span>HTML5</span>
                                 <span>CSS3</span>
                                 <span>JavaScript</span>
-                                <span>Mapbox API (maps)</span>
-                                <span>Cloudinary (image storage)</span>
-                                <span>Jest (testing)</span>
-                                <span>GitHub Actions (CI/CD)</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/421pvv/photography-spot-finder" aria-label="View GitHub repository"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
-                                <a href="https://youtu.be/SCBXOWmqA4g?feature=shared" aria-label="View live demo"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</a>
+                                <span>Mapbox API</span>
+                                <span>Cloudinary</span>
+                                <span>Jest</span>
                             </div>
                         </div>
                     </div>
 
-                    
+                    <!-- Project 2 (Dummy Project for Now) -->
+                    <!-- <div class="project-card" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="100" data-categories="ml backend">
+                        <div class="project-image-container">
+                            <img src="./media/PhotographySpotFinder.webp" alt="Machine Learning Project" class="project-image" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/421pvv/photography-spot-finder" class="project-link" aria-label="View GitHub repository" target="_blank" rel="noopener">
+                                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                                    </a>
+                                    <a href="https://youtu.be/SCBXOWmqA4g?feature=shared" class="project-link" aria-label="View live demo" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">ML Image Classification</h3>
+                            <div class="project-description-container">
+                                <p class="project-description">An image classification application that uses machine learning to identify objects in photos with high accuracy. Built with Python and TensorFlow, this project demonstrates my skills in AI/ML development.</p>
+                            </div>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>Keras</span>
+                                <span>NumPy</span>
+                                <span>Pandas</span>
+                                <span>Matplotlib</span>
+                                <span>Flask</span>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </section>
 
-        <section id="contact">
+        <!-- Contact section with enhanced styling -->
+        <section id="contact" class="section-padding">
             <div class="container">
-                <h2 class="section-title">Contact Me</h2>
-                <div class="contact-info">
-                    <p class="hero-description">I'm currently seeking internship opportunities as a Software Engineer, Software Developer, Full-Stack Developer, Front-End Developer, Back-End Developer, Machine Learning Engineer, or Software Tester.</p>
-                    <p class="hero-description">Feel free to contact me with any of these work or internship opportunities using the following communication channels.</p>
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="400">Contact Me</h2>
+                <div class="contact-info" data-aos="zoom-in" data-aos-duration="400">
+                    <p class="contact-description">I'm currently seeking internship opportunities as a Software Engineer, Software Developer, Full-Stack Developer, Front-End Developer, Back-End Developer, Machine Learning Engineer, or Software Tester.</p>
+                    <p class="contact-description">Feel free to contact me with any of these work or internship opportunities using the following communication channels.</p>
                     <div class="contact-methods">
                         <div class="contact-item">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <a href="mailto:vishnuvardhanputta421@gmail.com">vishnuvardhanputta421@gmail.com</a>
+                            <div class="contact-icon-container">
+                                <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                            </div>
+                            <a href="mailto:vishnuvardhanputta421@gmail.com" class="contact-link">vishnuvardhanputta421@gmail.com</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <a href="https://github.com/421pvv" target="_blank">github.com/421pvv</a>
+                            <div class="contact-icon-container">
+                                <i class="fab fa-github contact-icon" aria-hidden="true"></i>
+                            </div>
+                            <a href="https://github.com/421pvv" target="_blank" rel="noopener" class="contact-link">github.com/421pvv</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                            <a href="https://linkedin.com/in/vishnuvardhanputta" target="_blank">linkedin.com/in/vishnuvardhanputta</a>
+                            <div class="contact-icon-container">
+                                <i class="fab fa-linkedin contact-icon" aria-hidden="true"></i>
+                            </div>
+                            <a href="https://linkedin.com/in/vishnuvardhanputta" target="_blank" rel="noopener" class="contact-link">linkedin.com/in/vishnuvardhanputta</a>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- Decorative elements for contact section -->
+            <div class="contact-decoration">
+                <div class="circle-large"></div>
+                <div class="circle-small"></div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer with subtle animation -->
+    <footer class="glass-effect">
         <div class="container">
-            <p>&copy; 2025 Vishnu Vardhan Putta. All rights reserved.</p>
+            <p class="footer-text">&copy; 2025 Vishnu Vardhan Putta. All rights reserved.</p>
+            <p class="footer-note">Built with <i class="fas fa-heart pulse" aria-hidden="true"></i> and modern web technologies</p>
         </div>
     </footer>
+
+    <!-- Theme toggle button -->
+    <button id="themeToggle" class="theme-toggle-fixed" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon" id="darkIcon"></i>
+        <i class="fas fa-sun" id="lightIcon"></i>
+    </button>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- AOS (Animate On Scroll) library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Main JavaScript file -->
     <script src="./js/main.js"></script>
 </body>
 </html>
