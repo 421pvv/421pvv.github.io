@@ -99,6 +99,8 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     scroll-padding-top: 5rem;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -191,9 +193,9 @@ a:focus,
 @keyframes float-particle {
     0% { transform: translateY(0) translateX(0); opacity: 0; }
     25% { opacity: 0.4; }
-    50% { transform: translateY(-300px) translateX(100px); opacity: 0.2; }
+    50% { transform: translateY(-300px) translateX(50px); opacity: 0.2; }
     75% { opacity: 0.4; }
-    100% { transform: translateY(-600px) translateX(-100px); opacity: 0; }
+    100% { transform: translateY(-600px) translateX(-50px); opacity: 0; }
 }
 
 @keyframes logo-glow {

@@ -256,8 +256,9 @@ function createOptimizedParticle(container) {
     
     // Random properties but fewer variations for better performance
     const size = Math.random() * 4 + 2;
-    const posX = Math.random() * 100;
-    const posY = Math.random() * 100;
+    // Limit positions to stay within boundaries
+    const posX = Math.random() * 95;
+    const posY = Math.random() * 95;
     const duration = Math.random() * 20 + 10; // Faster animations
     
     // Set styles directly for better performance
