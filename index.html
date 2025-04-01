@@ -13,13 +13,15 @@
         // Immediately set theme based on localStorage to prevent flash
         const storedTheme = localStorage.getItem('theme');
         if (storedTheme === 'light') {
-            document.documentElement.classList.add('light-mode');
+            document.body.classList.add('light-mode');
         } else if (storedTheme === 'dark') {
-            document.documentElement.classList.remove('light-mode');
+            document.body.classList.remove('light-mode');
         } else {
             // Check system preference
             const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.documentElement.classList.toggle('light-mode', !prefersDarkMode);
+            if (!prefersDarkMode) {
+                document.body.classList.add('light-mode');
+            }
         }
     </script>
     <!-- Font Awesome for icons -->
@@ -198,8 +200,8 @@
                     <button class="filter-btn" data-filter="frontend">Front-end</button>
                     <button class="filter-btn" data-filter="backend">Back-end</button>
                     <button class="filter-btn" data-filter="fullstack">Full-stack</button>
-                    <!-- Blank categories for now
-                    <button class="filter-btn" data-filter="ml">AI/ML</button>
+                    <!-- Blank categories for now -->
+                    <!-- <button class="filter-btn" data-filter="ml">AI/ML</button>
                     <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
                     <button class="filter-btn" data-filter="desktop">Desktop Apps</button> -->
                 </div>

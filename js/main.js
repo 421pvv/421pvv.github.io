@@ -20,8 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
   initBackToTopButton();
   initScrollSpy();
   initThemeToggle();
-  initProjectFilters();
+  injectParticleAnimationStyles();
   initOptimizedParticles();
+  initProjectFilters();
   initEqualHeights();
 });
 
@@ -250,10 +251,18 @@ function initThemeToggle() {
 function initOptimizedParticles() {
   const particlesContainer = document.getElementById('particles-container');
 
+  // Debug: Log if container is found
+  console.log('Particles container found:', particlesContainer ? true : false);
+
   if (!particlesContainer) return;
 
   // Create fewer particles for better performance
   const particleCount = window.innerWidth > 768 ? 50 : 30;
+
+  console.log('Creating', particleCount, 'particles');
+
+  // Debug: Clear existing particles first
+  particlesContainer.innerHTML = '';
 
   for (let i = 0; i < particleCount; i++) {
     createOptimizedParticle(particlesContainer);
@@ -262,6 +271,7 @@ function initOptimizedParticles() {
   // Pause animations when tab is not visible
   document.addEventListener('visibilitychange', () => {
     const particles = document.querySelectorAll('.particle');
+    console.log('Visibility changed, particles found:', particles.length);
     if (document.hidden) {
       particles.forEach((p) => (p.style.animationPlayState = 'paused'));
     } else {
@@ -278,11 +288,14 @@ function createOptimizedParticle(container) {
   particle.className = 'particle';
 
   // Random properties but fewer variations for better performance
-  const size = Math.random() * 4 + 2;
+  const size = Math.random() * 8 + 2;
   // Limit positions to stay within boundaries
   const posX = Math.random() * 95;
   const posY = Math.random() * 95;
   const duration = Math.random() * 20 + 10; // Faster animations
+
+  // Use CSS variables for theme compatibility
+  const isPrimary = Math.random() > 0.5;
 
   // Set styles directly for better performance
   particle.style.cssText = `
@@ -291,11 +304,16 @@ function createOptimizedParticle(container) {
         left: ${posX}%;
         top: ${posY}%;
         animation-duration: ${duration}s;
-        background-color: var(--${
-          Math.random() > 0.5 ? 'primary' : 'secondary'
-        });
+        background-color: ${isPrimary ? 'var(--primary)' : 'var(--secondary)'};
         opacity: ${Math.random() * 0.2 + 0.1};
     `;
+
+  // Adjust opacity based on whether it's light or dark mode
+  const isLightMode = document.body.classList.contains('light-mode');
+  const baseOpacity = isLightMode ? 0.15 : 0.2; // Lower opacity in light mode
+  const opacityVariation = isLightMode ? 0.1 : 0.2;
+
+  particle.style.opacity = `${baseOpacity + Math.random() * opacityVariation}`;
 
   // Add to container
   container.appendChild(particle);
@@ -395,3 +413,97 @@ window.addEventListener('load', function () {
     AOS.refresh();
   }, 100);
 });
+
+/**
+ * Ensuring Animation is Defined Directly in JS
+ */
+function injectParticleAnimationStyles() {
+  // Create a style element
+  const style = document.createElement('style');
+  style.textContent = `
+        @keyframes float-particle {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            25% { opacity: 0.4; }
+            50% { transform: translateY(-300px) translateX(50px); opacity: 0.2; }
+            75% { opacity: 0.4; }
+            100% { transform: translateY(-600px) translateX(-50px); opacity: 0; }
+        }
+        
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float-particle 20s infinite linear;
+        }
+    `;
+
+  // Append to document head
+  document.head.appendChild(style);
+  console.log('Particle animation styles injected');
+}
+
+/**
+ * Project Filters with optimized animation
+ */
+function initProjectFilters() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  if (filterButtons.length === 0 || projectCards.length === 0) return;
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // Update active button
+      filterButtons.forEach((btn) => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Get filter value
+      const filterValue = button.getAttribute('data-filter');
+
+      // Filter projects with animation
+      projectCards.forEach((card) => {
+        const categoriesAttr = card.getAttribute('data-categories') || '';
+        const categories = categoriesAttr.split(' ');
+
+        const show = filterValue === 'all' || categories.includes(filterValue);
+
+        if (show) {
+          card.classList.remove('hidden');
+          // Use requestAnimationFrame for smoother transitions
+          requestAnimationFrame(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          });
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            card.classList.add('hidden');
+          }, 300);
+        }
+      });
+
+      // Refresh AOS animations
+      setTimeout(() => {
+        AOS.refresh();
+      }, 300);
+    });
+  });
+
+  // Make sure "All" button is active by default
+  const allButton = document.querySelector('.filter-btn[data-filter="all"]');
+  if (allButton) {
+    allButton.classList.add('active');
+  }
+}
