@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vishnu Vardhan Putta - Software Developer specializing in web development and exploring machine learning">
+    <meta name="description"
+        content="Vishnu Vardhan Putta - Software Developer specializing in web development and exploring machine learning">
     <meta name="keywords" content="software developer, web development, machine learning, portfolio">
     <title>Vishnu Vardhan Putta | Portfolio</title>
     <link rel="icon" type="image/x-icon" href="./media/favicon.ico">
+    <script>
+        // Immediately set theme based on localStorage to prevent flash
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'light') {
+            document.documentElement.classList.add('light-mode');
+        } else if (storedTheme === 'dark') {
+            document.documentElement.classList.remove('light-mode');
+        } else {
+            // Check system preference
+            const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('light-mode', !prefersDarkMode);
+        }
+    </script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- AOS (Animate On Scroll) library for scroll animations -->
@@ -16,6 +31,7 @@
     <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 </head>
+
 <body>
     <!-- Preloader -->
     <div class="loader">
@@ -32,7 +48,8 @@
                 <!-- Enhanced logo with modern design -->
                 <a href="#" class="logo" aria-label="Home">
                     <div class="logo-container">
-                        <span class="code-tag">&lt;</span><span class="logo-text">Vishnu.</span><span class="accent">Dev</span><span class="code-tag">/&gt;</span>
+                        <span class="code-tag">&lt;</span><span class="logo-text">Vishnu.</span><span
+                            class="accent">Dev</span><span class="code-tag">/&gt;</span>
                         <div class="logo-glow"></div>
                     </div>
                 </a>
@@ -44,7 +61,7 @@
                         <a href="#projects" class="nav-item">Projects</a>
                         <a href="#contact" class="nav-item">Contact</a>
                     </div>
-                    
+
                     <!-- Hamburger menu for mobile -->
                     <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
                         <span class="line"></span>
@@ -62,15 +79,19 @@
             <div class="container">
                 <div class="hero-content" data-aos="fade-up" data-aos-duration="400">
                     <h1 class="hero-title">Hello! I'm <span class="gradient-text">Vishnu Vardhan Putta</span></h1>
-                    <h2 class="hero-subtitle">Computer Science Graduate Student · Software Developer · Exploring Machine Learning</h2>
-                    <p class="hero-description">I build web applications and design APIs. I've worked on full-stack apps and enjoy creating efficient, scalable solutions. Web dev is my strong suit, but I'm also diving into machine learning and its real-world applications. I focus on making things work smoothly and continuously improving through hands-on experience.</p>
+                    <h2 class="hero-subtitle">Computer Science Graduate Student · Software Developer · Exploring Machine
+                        Learning</h2>
+                    <p class="hero-description">I build web applications and design APIs. I've worked on full-stack apps
+                        and enjoy creating efficient, scalable solutions. Web dev is my strong suit, but I'm also diving
+                        into machine learning and its real-world applications. I focus on making things work smoothly
+                        and continuously improving through hands-on experience.</p>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
                         <a href="#contact" class="btn btn-outline">Contact Me</a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Particles container -->
             <div id="particles-container" class="particles-container"></div>
         </section>
@@ -89,9 +110,19 @@
                         </div>
                     </div>
                     <div class="about-content" data-aos="fade-left" data-aos-duration="400" data-aos-delay="100">
-                        <p class="about-description">I'm a Computer Science graduate student focusing on Software Development. I'm proficient in Web Development and API design, having built full-stack applications and developed APIs to enhance functionality. I'm also very strong in Data Structures and Algorithms, having TA'd for both the Web Programming and Algorithms graduate courses.</p>
-                        <p class="about-description">I'm passionate about creating scalable, efficient solutions and do a lot of unit testing to ensure my code works as expected. Currently, I'm diving into machine learning, always looking for ways to expand my skills and apply new technologies to solve real-world problems. I have hands-on experience working in Agile software development environments, collaborating with teams using tools like Jira and Git.</p>
-                        <p class="about-description">When I'm not coding, I enjoy solving Rubik's Cubes, photographing portraits, and watching thriller movies or series. I'm always eager to take on new challenges and push myself to grow.</p>
+                        <p class="about-description">I'm a Computer Science graduate student focusing on Software
+                            Development. I'm proficient in Web Development and API design, having built full-stack
+                            applications and developed APIs to enhance functionality. I'm also very strong in Data
+                            Structures and Algorithms, having TA'd for both the Web Programming and Algorithms graduate
+                            courses.</p>
+                        <p class="about-description">I'm passionate about creating scalable, efficient solutions and do
+                            a lot of unit testing to ensure my code works as expected. Currently, I'm diving into
+                            machine learning, always looking for ways to expand my skills and apply new technologies to
+                            solve real-world problems. I have hands-on experience working in Agile software development
+                            environments, collaborating with teams using tools like Jira and Git.</p>
+                        <p class="about-description">When I'm not coding, I enjoy solving Rubik's Cubes, photographing
+                            portraits, and watching thriller movies or series. I'm always eager to take on new
+                            challenges and push myself to grow.</p>
                     </div>
                 </div>
             </div>
@@ -160,7 +191,7 @@
         <section id="projects" class="section-padding">
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up" data-aos-duration="400">My Projects</h2>
-                
+
                 <!-- Project Category Filter -->
                 <div class="project-filter" data-aos="fade-up" data-aos-duration="400">
                     <button class="filter-btn active" data-filter="all">All</button>
@@ -172,18 +203,23 @@
                     <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
                     <button class="filter-btn" data-filter="desktop">Desktop Apps</button> -->
                 </div>
-                
+
                 <div class="projects-grid">
                     <!-- Project 1 -->
-                    <div class="project-card" data-aos="zoom-in" data-aos-duration="400" data-categories="frontend backend fullstack">
+                    <div class="project-card" data-aos="zoom-in" data-aos-duration="400"
+                        data-categories="frontend backend fullstack">
                         <div class="project-image-container">
-                            <img src="./media/PhotographySpotFinder.webp" alt="Screenshot of Photography Spot Finder Project" class="project-image" loading="lazy">
+                            <img src="./media/PhotographySpotFinder.webp"
+                                alt="Screenshot of Photography Spot Finder Project" class="project-image"
+                                loading="lazy">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="https://github.com/421pvv/photography-spot-finder" class="project-link" aria-label="View GitHub repository" target="_blank" rel="noopener">
+                                    <a href="https://github.com/421pvv/photography-spot-finder" class="project-link"
+                                        aria-label="View GitHub repository" target="_blank" rel="noopener">
                                         <i class="fab fa-github" aria-hidden="true"></i> GitHub
                                     </a>
-                                    <a href="https://youtu.be/SCBXOWmqA4g?feature=shared" class="project-link" aria-label="View live demo" target="_blank" rel="noopener">
+                                    <a href="https://youtu.be/SCBXOWmqA4g?feature=shared" class="project-link"
+                                        aria-label="View live demo" target="_blank" rel="noopener">
                                         <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
                                     </a>
                                 </div>
@@ -192,7 +228,10 @@
                         <div class="project-content">
                             <h3 class="project-title">Photography Spot Finder</h3>
                             <div class="project-description-container">
-                                <p class="project-description">A web app for photographers to discover, share, and rate the best photo spots in New York City. Users can browse locations, submit new spots with descriptions and images, leave ratings and comments, and save favorites to their profiles.</p>
+                                <p class="project-description">A web app for photographers to discover, share, and rate
+                                    the best photo spots in New York City. Users can browse locations, submit new spots
+                                    with descriptions and images, leave ratings and comments, and save favorites to
+                                    their profiles.</p>
                             </div>
                             <div class="project-tech">
                                 <span>Node.js</span>
@@ -250,26 +289,32 @@
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up" data-aos-duration="400">Contact Me</h2>
                 <div class="contact-info" data-aos="zoom-in" data-aos-duration="400">
-                    <p class="contact-description">I'm currently seeking internship opportunities as a Software Engineer, Software Developer, Full-Stack Developer, Front-End Developer, Back-End Developer, Machine Learning Engineer, or Software Tester.</p>
-                    <p class="contact-description">Feel free to contact me with any of these work or internship opportunities using the following communication channels.</p>
+                    <p class="contact-description">I'm currently seeking internship opportunities as a Software
+                        Engineer, Software Developer, Full-Stack Developer, Front-End Developer, Back-End Developer,
+                        Machine Learning Engineer, or Software Tester.</p>
+                    <p class="contact-description">Feel free to contact me with any of these work or internship
+                        opportunities using the following communication channels.</p>
                     <div class="contact-methods">
                         <div class="contact-item">
                             <div class="contact-icon-container">
                                 <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
                             </div>
-                            <a href="mailto:vishnuvardhanputta421@gmail.com" class="contact-link">vishnuvardhanputta421@gmail.com</a>
+                            <a href="mailto:vishnuvardhanputta421@gmail.com"
+                                class="contact-link">vishnuvardhanputta421@gmail.com</a>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon-container">
                                 <i class="fab fa-github contact-icon" aria-hidden="true"></i>
                             </div>
-                            <a href="https://github.com/421pvv" target="_blank" rel="noopener" class="contact-link">github.com/421pvv</a>
+                            <a href="https://github.com/421pvv" target="_blank" rel="noopener"
+                                class="contact-link">github.com/421pvv</a>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon-container">
                                 <i class="fab fa-linkedin contact-icon" aria-hidden="true"></i>
                             </div>
-                            <a href="https://linkedin.com/in/vishnuvardhanputta" target="_blank" rel="noopener" class="contact-link">linkedin.com/in/vishnuvardhanputta</a>
+                            <a href="https://linkedin.com/in/vishnuvardhanputta" target="_blank" rel="noopener"
+                                class="contact-link">linkedin.com/in/vishnuvardhanputta</a>
                         </div>
                     </div>
                 </div>
@@ -286,7 +331,8 @@
     <footer class="glass-effect">
         <div class="container">
             <p class="footer-text">&copy; 2025 Vishnu Vardhan Putta. All rights reserved.</p>
-            <p class="footer-note">Built with <i class="fas fa-heart pulse" aria-hidden="true"></i> and modern web technologies</p>
+            <p class="footer-note">Built with <i class="fas fa-heart pulse" aria-hidden="true"></i> and modern web
+                technologies</p>
         </div>
     </footer>
 
@@ -307,4 +353,5 @@
     <!-- Main JavaScript file -->
     <script src="./js/main.js"></script>
 </body>
+
 </html>
